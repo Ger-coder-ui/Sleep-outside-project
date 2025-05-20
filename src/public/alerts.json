@@ -1,0 +1,12 @@
+[
+  {
+    "message": "Special offer available today only!",
+    "background": "darkblue",
+    "color": "white"
+  },
+  {
+    "message": "New camping gear just added!",
+    "background": "darkgreen",
+    "color": "lightyellow"
+  }
+]
