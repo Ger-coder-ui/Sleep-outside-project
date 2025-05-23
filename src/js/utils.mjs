@@ -1,21 +1,9 @@
-// Wrapper for querySelector...returns matching element
-export function qs(selector, parent = document) {
-  return parent.querySelector(selector);
-}
-// Or a more concise version if you prefer:
-// export const qs = (selector, parent = document) => parent.querySelector(selector);
-
-// Retrieve data from local storage
-export function getLocalStorage(key) {
-  return JSON.parse(localStorage.getItem(key));
-}
-
-// Save data to local storage
+// Save data to localStorage
 export function setLocalStorage(key, data) {
   localStorage.setItem(key, JSON.stringify(data));
 }
 
-// Set a listener for both touchend and click events
+// Add both touchend and click event listeners
 export function setClick(selector, callback) {
   qs(selector).addEventListener("touchend", (event) => {
     event.preventDefault();
@@ -24,11 +12,31 @@ export function setClick(selector, callback) {
   qs(selector).addEventListener("click", callback);
 }
 
-// Render a list of items using a template function
-export function renderListWithTemplate(templateFn, parentElement, list, position = 'afterbegin', clear = true) {
-  if (clear) {
-    parentElement.innerHTML = '';
+// Render static HTML content (e.g., header or footer) into a DOM element
+export function renderWithTemplate(template, parentElement, data = null, callback = null) {
+  parentElement.innerHTML = template;
+  if (callback) {
+    callback(data);
   }
-  const htmlStrings = list.map(templateFn);
-  parentElement.insertAdjacentHTML(position, htmlStrings.join(''));
 }
+
+// Load an external HTML file and return it as a string
+export async function loadTemplate(path) {
+  const response = await fetch(path);
+  const html = await response.text();
+  return html;
+}
+
+// Load and render the header and footer templates into the page
+export async function loadHeaderFooter() {
+  const header = await loadTemplate("/partials/header.html");
+  const footer = await loadTemplate("/partials/footer.html");
+
+  const headerEl = document.getElementById("main-header");
+  const footerEl = document.getElementById("main-footer");
+
+  renderWithTemplate(header, headerEl);
+  renderWithTemplate(footer, footerEl);
+}
+
+
