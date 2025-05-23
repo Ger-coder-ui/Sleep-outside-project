@@ -40,3 +40,10 @@ export async function loadHeaderFooter() {
 }
 
 
+/** added getparam()*/
+export function getParam(name, url = window.location.href) {
+  const params = new URL(url).searchParams;
+  return params.get(name);
+
+
+}
