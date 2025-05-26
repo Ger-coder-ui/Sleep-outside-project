@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sleep Outside | Premium Outdoor Gear</title>
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="preload" href="/images/hero-banner.jpg" as="image" />
+  </head>
+
+  <body>
+    <header class="divider">
+      <div class="logo">
+        <img 
+          src="/images/noun_Tent_2517.svg" 
+          alt="Sleep Outside Logo" 
+          width="40" 
+          height="40"
+          loading="eager"
+        />
+        <a href="/index.html">Sleep<span class="highlight">Outside</span></a>
+      </div>
+      <div class="cart">
+        <a href="/cart/index.html" aria-label="View Cart">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-hidden="true">
+            <!-- Your cart SVG path data here -->
+          </svg>
+        </a>
+      </div>
+    </header>
+
+    <main class="divider">
+      <!-- Hero Banner -->
+      <div class="hero">
+        <img
+          src="/images/hero-banner.jpg"
+          srcset="/images/hero-banner-sm.jpg 500w, /images/hero-banner.jpg 1200w"
+          alt="Mountain landscape at sunset"
+          loading="eager"
+        />
+        <div class="cta">
+          <h1>Adventure Awaits</h1>
+          <p>Quality gear for your outdoor journeys</p>
+        </div>
+      </div>
+
+      <!-- Category Grid -->
+      <section class="category-showcase">
+        <h2 class="section-title">Shop by Category</h2>
+        <div class="category-grid">
+          <a href="/product_listing/index.html?category=tents" class="category-card">
+            <img src="/images/category-tents.svg" alt="Tents" loading="lazy" width="100" height="100">
+            <h3>Tents</h3>
+          </a>
+          <a href="/product_listing/index.html?category=backpacks" class="category-card">
+            <img src="/images/category-backpacks.svg" alt="Backpacks" loading="lazy" width="100" height="100">
+            <h3>Backpacks</h3>
+          </a>
+          <a href="/product_listing/index.html?category=sleeping-bags" class="category-card">
+            <img src="/images/category-sleeping-bags.svg" alt="Sleeping Bags" loading="lazy" width="100" height="100">
+            <h3>Sleeping Bags</h3>
+          </a>
+          <a href="/product_listing/index.html?category=hammocks" class="category-card">
+            <img src="/images/category-hammocks.svg" alt="Hammocks" loading="lazy" width="100" height="100">
+            <h3>Hammocks</h3>
+          </a>
+        </div>
+      </section>
+
+      <!-- Featured Products Section -->
+      <section class="featured">
+        <h2 class="section-title">Our Top Picks</h2>
+        <div class="product-list">
+          <!-- Will be populated dynamically -->
+          <div class="loading">Loading featured gear...</div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <p>&copy;2025 SleepOutside</p>
+        <p>WDD 330 - BYU-Idaho</p>
+        <p>For BYU-Pathway Worldwide Online</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>
