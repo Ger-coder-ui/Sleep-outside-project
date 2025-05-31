@@ -12,6 +12,7 @@
   </head>
 
   <body>
+     <div id="main-header"></div>
     <header class="divider">
       <div class="logo">
         <img src="images/noun_Tent_2517.svg" alt="tent image for logo" />
@@ -61,7 +62,11 @@
         <h2>Review & Place your Order</h2>
       </section>
     </main>
+  <div id="main-footer"></div>
 
-    <footer>&copy;NOT a real business</footer>
+    <script type="module">
+      import { loadHeaderFooter } from './js/utils.mjs';
+      loadHeaderFooter();
+    </script>
   </body>
 </html>
