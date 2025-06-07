@@ -26,3 +26,25 @@ function cartItemTemplate(item) {
 }
 
 renderCartContents();
+
+function calculateTotal(cartItems) {
+  let total = 0;
+  cartItems.forEach(item => {
+    total += item.finalPrice * item.quantity; // Make sure your item has price and quantity
+  });
+  return total.toFixed(2);
+}
+
+function updateCartTotal(cartItems) {
+  const footer = document.querySelector('.cart-footer');
+  const totalElement = document.querySelector('.cart-total');
+
+  if (cartItems.length > 0) {
+    footer.classList.remove('hide');
+    const total = calculateTotal(cartItems);
+    totalElement.textContent = `Total: $${total}`;
+  } else {
+    footer.classList.add('hide');
+  }
+}
+
